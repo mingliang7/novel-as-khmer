@@ -1,0 +1,75 @@
+<template name="accountLogin">
+    <div class="card">
+        <div class="card-content">
+            <span class="card-title activator blue-grey-text text-darken-4">Login</span>
+            <div class="row">
+                <div class="input-field col s6">
+                    <a href="#" class="waves-effect waves-light btn blue"><i class="zmdi zmdi-facebook"></i></a>
+                </div>
+            </div>
+            <form class="col s12">
+                <div class="input-field col s6">
+                    <i class="zmdi zmdi-account-circle prefix"></i>
+                    <input id="usernameLogin" type="text" class="validate">
+                    <label for="username">Username </label>
+                </div>
+                <div class="input-field col s6">
+                    <i class="zmdi zmdi-lock prefix"></i>
+                    <input id="passwordLogin" type="password" class="validate">
+                    <label for="password">Password</label>
+                </div>
+                <div class="col s6">
+                    <p>
+                        <input type="checkbox" id="remember-me"/>
+                        <label for="remember-me">Remember me</label>
+                    </p>
+                </div>
+                <div class="row">
+                    <div class="col s6">
+                        <button class="waves-effect waves-light btn red login" type="submit"><i
+                                class="zmdi zmdi-mail-send right"></i>Login
+                        </button>
+                    </div>
+                </div>
+            </form>
+            <!--<span class="card-title activator blue-grey-text text-darken-4"><i class="zmdi zmdi-more-vert right"></i>Register</span>-->
+            <p><a class="activator" href="#"><i class="zmdi zmdi-account-add prefix"></i>&nbsp;Register</a></p>
+        </div>
+        <div class="card-reveal">
+            <span class="card-title grey-text text-darken-4">Register<i class="zmdi zmdi-close right"></i></span>
+            {{>accountRegister}}
+        </div>
+    </div>
+</template>
+
+
+<template name="accountRegister">
+    <form id="accountRegister">
+        <div class="input-field col s6">
+            <i class="zmdi zmdi-account-circle prefix"></i>
+            <input id="username" type="text" value="">
+            <label for="username" class="valid-user">Username</label>
+        </div>
+        <div class="input-field  col s6">
+            <i class="zmdi zmdi-email prefix"></i>
+            <input id="email" type="email" value="">
+            <label for="email">Email</label>
+        </div>
+        <div class="input-field col s6">
+            <i class="showPassword zmdi zmdi-eye prefix"></i>
+            <input id="password" type="{{toggleShowPassword}}" value="">
+            <label for="password">Password</label>
+        </div>
+        <div class="input-field col s6">
+            <i class="confirmation prefix"></i>
+            <input id="password-confirmation" type="{{toggleShowPassword}}" value="">
+            <label for="password" class="valid-confirm-password">Password Confirmation</label>
+        </div>
+        <div class="row">
+            <div class="col s6">
+                <button class="register waves-effect waves-light btn blue" type="submit"> Register<i
+                        class="zmdi zmdi-mail-send right"></i></button>
+            </div>
+        </div>
+    </form>
+</template>
